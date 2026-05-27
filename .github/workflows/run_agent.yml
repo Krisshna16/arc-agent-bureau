@@ -24,4 +24,8 @@ jobs:
         env:
           AGENT_PRIVATE_KEY: ${{ secrets.AGENT_PRIVATE_KEY }}
           PREDICTION_CONTRACT_ADDRESS: ${{ secrets.PREDICTION_CONTRACT_ADDRESS }}
-        run: python agent_runner.py
+        run: |
+          echo "=== Checking visible repository files ==="
+          ls -la
+          echo "=== Executing Python Agent Logic ==="
+          python agent_runner.py
