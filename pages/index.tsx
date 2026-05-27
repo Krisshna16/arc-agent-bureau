@@ -7,7 +7,7 @@ const CONTRACT_ABI = [
 ];
 
 export default function Dashboard() {
-  const [contractAddress, setContractAddress] = useState('0x3d639e09F768b4c874571aC2b0aDa71496E89623');
+  const [contractAddress, setContractAddress] = useState('0xd8b934580fcE35a11B58C6D73aDeE468a2833fa8');
   const [totalPreds, setTotalPreds] = useState('0');
   const [latestForecast, setLatestForecast] = useState<any>(null);
   const [loading, setLoading] = useState(false);
