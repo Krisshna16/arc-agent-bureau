@@ -28,4 +28,4 @@ jobs:
           echo "=== Checking visible repository files ==="
           ls -la
           echo "=== Executing Python Agent Logic ==="
-          python agent_runner.py
+          python -u agent_runner.py
