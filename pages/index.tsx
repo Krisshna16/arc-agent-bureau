@@ -24,15 +24,15 @@ export default function Dashboard() {
       const contract = new ethers.Contract(contractAddress, CONTRACT_ABI, provider);
       
       const total = await contract.totalPredictions();
-      const count = Number(total);
-      setTotalPreds(count.toString());
-
-      // Attempt to find the last valid prediction
-      // We try the index 'count' first, if that fails, we try 'count - 1'
-      if (count > 0) {
-        try {
-          // Attempt 1-based index (common in many solidity patterns)
-          const data = await contract.getPredictionDetails(count);
+     // Replace your fetching logic with this safe check:
+        const count = Number(total);
+        setTotalPreds(count.toString());
+        
+        if (count > 0) {
+          // Use (count - 1) because the 7th item is at index 6
+          const lastIndex = count - 1;
+          const data = await contract.getPredictionDetails(lastIndex);
+          
           setLatestForecast({
             asset: data.asset,
             price: data.price.toString(),
