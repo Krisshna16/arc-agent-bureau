@@ -88,7 +88,7 @@ def main():
     signed_tx = w3.eth.account.sign_transaction(tx, private_key=private_key)
     
     print("Broadcasting signed payload transaction to Arc mempool...", flush=True)
-    tx_hash = w3.eth.send_raw_transaction(signed_tx.rawTransaction)
+    tx_hash = w3.eth.send_raw_transaction(signed_tx.raw_transaction)
     
     print("--- SUCCESS LOG ACTIVATED ---", flush=True)
     print(f"Transaction Hash Trackable via Arcscan: {w3.to_hex(tx_hash)}", flush=True)
