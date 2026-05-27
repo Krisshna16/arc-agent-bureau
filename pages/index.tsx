@@ -9,7 +9,7 @@ const CONTRACT_ABI = [
 ];
 
 export default function Dashboard() {
-  const [contractAddress, setContractAddress] = useState('0x7C8Ff69286910bb4F965954c98612c8934bE5aD8'); // Pre-fill with your contract
+  const [contractAddress, setContractAddress] = useState('0x3d639e09F768b4c874571aC2b0aDa71496E89623'); // Pre-fill with your contract
   const [totalPreds, setTotalPreds] = useState('...');
   const [latestForecast, setLatestForecast] = useState<any>(null);
   const [walletConnected, setWalletConnected] = useState(false);
