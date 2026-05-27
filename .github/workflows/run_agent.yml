@@ -1,0 +1,27 @@
+name: Test Arc Agent Loop
+
+on:
+  workflow_dispatch: # This adds a manual "Play" button in your GitHub dashboard
+
+jobs:
+  execute-agent:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code Repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python Environment
+        uses: actions/setup-python@v5
+        with:
+          python-cache-dependency-path: "" # Clear strict dependency caching
+
+      - name: Install Web3 Library Dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install web3
+
+      - name: Execute Autonomous Agent Loop
+        env:
+          AGENT_PRIVATE_KEY: ${{ secrets.AGENT_PRIVATE_KEY }}
+          PREDICTION_CONTRACT_ADDRESS: ${{ secrets.PREDICTION_CONTRACT_ADDRESS }}
+        run: python agent_runner.py
