@@ -33,7 +33,7 @@ def main():
     print("Handshake verified with Arc RPC interface.", flush=True)
 
     private_key = os.getenv("AGENT_PRIVATE_KEY")
-    contract_address = "0x3d639e09F768b4c874571aC2b0aDa71496E89623"
+    contract_address = "0xd8b934580fcE35a11B58C6D73aDeE468a2833fa8"
     
     if not private_key or not contract_address:
         print("CRITICAL ERROR: Agent environmental credential mapping missing.")
